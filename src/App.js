@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import BlogList from './components/BlogList';
-import './assets/fonts/fonts.css';
+import './assets/css/fonts.css';
 
 class App extends Component {
   render() {

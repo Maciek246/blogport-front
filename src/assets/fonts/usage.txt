@@ -1,11 +1,11 @@
-CZCIONKA
+FONTS
 
-Open Sans - tekst tradycyjny
-Thasadith Bold - nag³ówki
-Thasadith - teksty wyró¿nione np. buttony
+Open Sans - body text
+Thasadith Bold - headline, titles
+Thasadith - special text eg. buttons background, links color
 
-KOLORY
+COLORS
 
-t³o: #ffffff;
-tekst: #000000;
-detale: #e5b300;
+background: #ffffff;
+text: #000000;
+details: #e5b300;
