@@ -1,0 +1,24 @@
+@font-face{
+    font-family: 'Open Sans';
+    src: url('./OpenSans-Regular.ttf');
+    font-style: normal;
+    font-weight: 400;
+  }
+  @font-face{
+    font-family: 'Open Sans SemiBold';
+    src: url('./OpenSans-SemiBold.ttf');
+    font-style: normal;
+    font-weight: 600;
+  }
+@font-face{
+    font-family: 'Thasadith Regular';
+    src: url('./Thasadith-Regular.ttf');
+    font-style: normal;
+    font-weight: 400;
+}
+@font-face{
+    font-family: 'Thasadith Bold';
+    src: url('./Thasadith-Bold.ttf');
+    font-style: normal;
+    font-weight: 700px;
+}
