@@ -1,0 +1,49 @@
+.main-navbar {
+     padding:1%;
+     margin-bottom: 100px;
+}
+
+.main-navbar--content {
+    
+}
+
+.main-navbar--content-left {
+    float:left;
+}
+
+
+.main-navbar--content-right {
+    float:left;
+    margin-left:60%;
+}
+
+.button--register {
+    font-size: 13px;
+    line-height: 100%;
+    background-color: rgba(0, 0, 0, 0);
+    height: 50px;
+    padding-top: 10px;
+    padding-bottom:10px;
+    border-radius: 20px;
+    border: 2px double #A9A9A9;
+    width:150px;
+    margin:5px;
+}
+
+.button--login {
+    font-size: 13px;
+    line-height: 100%;
+    background-color: rgba(0, 0, 0, 0);
+    height: 50px;
+    padding-top: 10px;
+    padding-bottom:10px;
+    border-radius: 20px;
+    border: 2px double #A9A9A9;
+    width:150px;
+}
+
+
+
+
+
+
