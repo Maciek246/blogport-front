@@ -7,5 +7,5 @@ Thasadith - special text eg. buttons background, links color
 COLORS
 
 background: #ffffff;
-text: #000000;
+text: #ffffff;
 details: #e5b300;
