@@ -1,8 +1,7 @@
 import React, { Component } from 'react';
 import BlogList from './components/BlogList'
 import MainNavbar from './components/MainNavbar'
-import BlogList from './components/BlogList';
-import './assets/css/fonts.css';
+import './assets/css/fonts.css'
 
 class App extends Component {
   render() {
@@ -10,7 +9,7 @@ class App extends Component {
       <div id="container">
         <div className="MainNavbar">
             <MainNavbar/>
-        </div>       
+        </div>   
         <BlogList/>
       </div>
     );

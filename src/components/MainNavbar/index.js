@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import style from './style.css';
+import 'font-awesome/css/font-awesome.min.css';
 
 class MainNavbar extends Component {
     render(){
@@ -7,11 +8,14 @@ class MainNavbar extends Component {
          <nav> 
         <div className="main-navbar">
             <div className="main-navbar main-navbar--content-left">
-                 <input id="input--search"type="text" placeholder="Podaj szukaną frazę"/>   
+                <div className="main-navbar main-navbar--search">
+                 <span class="icon"><i class="fa fa-search" aria-hidden="true"></i></span>
+                 <input id="search"type="text" placeholder="Podaj szukaną frazę"/>   
+                </div>
             </div>
             <div className="main-navbar main-navbar--content-right">
-                <button className="button--register">Zarejestruj się</button>
-                <button className="button--login">Zaloguj się</button>
+                <button className="button--main-navbar">Zarejestruj się</button>
+                <button className="button--main-navbar">Zaloguj się</button>
             </div>
           </div>
           </nav>
