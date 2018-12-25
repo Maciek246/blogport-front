@@ -18,9 +18,6 @@ class CategoryNavbar extends Component{
                     <a>Travel</a>
                     <a>Lifestyle</a>
                 </span>
-               
-              
-                <p>TEST TEST</p>
             </div>
         );
     }
