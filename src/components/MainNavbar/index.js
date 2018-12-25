@@ -9,7 +9,7 @@ class MainNavbar extends Component {
         <div className="main-navbar">
             <div className="main-navbar main-navbar--content-left">
                 <div className="main-navbar main-navbar--search">
-                 <span class="icon"><i class="fa fa-search" aria-hidden="true"></i></span>
+                 <span className="icon"><i className="fa fa-search" aria-hidden="true"></i></span>
                  <input id="search"type="text" placeholder="Podaj szukaną frazę"/>   
                 </div>
             </div>
