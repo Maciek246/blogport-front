@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import BlogList from './components/BlogList'
 import MainNavbar from './components/MainNavbar'
-import CategoryNabbar from './components/CategoryNavbar';
+import CategoryNavbar from './components/CategoryNavbar';
 import './assets/css/fonts.css'
 
 class App extends Component {
@@ -9,7 +9,7 @@ class App extends Component {
     return (
       <div>
         <MainNavbar/> 
-        <CategoryNabbar/> 
+        <CategoryNavbar/> 
         <BlogList/>
       </div>
     );
