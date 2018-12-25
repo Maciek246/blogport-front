@@ -1,15 +1,15 @@
 import React, { Component } from 'react';
 import BlogList from './components/BlogList'
 import MainNavbar from './components/MainNavbar'
+import CategoryNabbar from './components/CategoryNavbar';
 import './assets/css/fonts.css'
 
 class App extends Component {
   render() {
     return (
-      <div id="container">
-        <div className="MainNavbar">
-            <MainNavbar/>
-        </div>   
+      <div>
+        <MainNavbar/> 
+        <CategoryNabbar/> 
         <BlogList/>
       </div>
     );

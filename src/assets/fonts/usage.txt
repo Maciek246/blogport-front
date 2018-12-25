@@ -3,9 +3,12 @@ FONTS
 Open Sans - body text
 Thasadith Bold - headline, titles
 Thasadith - special text eg. buttons background, links color
+Major Mono - only for Blogport title
 
 COLORS
 
 background: #ffffff;
-text: #ffffff;
+text: #000000;
+details text: #ffffff;
 details: #e5b300;
+Blogport title: #1b1ece;
