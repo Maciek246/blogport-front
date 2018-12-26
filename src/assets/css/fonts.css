@@ -22,3 +22,12 @@
     font-style: normal;
     font-weight: 700px;
 }
+@font-face{
+    font-family: 'Major Mono';
+    src: url('../fonts/MajorMonoDisplay-Regular.ttf');
+    font-style: normal;
+    font-weight: 400;
+  }
+  *{
+    font-family: 'Open Sans';
+  }
