@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import style from './style.css';
+import './style.css';
 import 'font-awesome/css/font-awesome.min.css';
 
 class MainNavbar extends Component {

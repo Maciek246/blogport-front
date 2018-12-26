@@ -1,0 +1,52 @@
+.BlogLovWeb--container{
+    margin: 0;
+    padding: 0;
+}
+.BlogLovWeb--header-img{
+    width: 100%;
+}
+.BlogLovWeb--content-container{
+    display: flex;
+    margin: 0;
+    padding: 0;
+    flex-direction: column;
+    justify-content: center;
+    align-content: center;
+    align-items: center;
+    align-self: center;
+    background-color: #779ECC;
+    height: 100%;
+    
+}
+.BlogLovWeb--content{
+    padding-bottom: 30px;
+    background-color: #fff;
+    width: 70%;
+}
+.BlogLovWeb--title{
+    font-family: 'Thasadith Bold';
+    color: #E8B4A2;
+    text-align: center;
+    font-size: 35px;
+}
+.BlogLovWeb--text{
+    font-family: 'Open Sans';
+    color: #000;
+    font-size: 16px;
+    text-align: justify;
+    padding: 10px 50px;
+}
+.BlogLovWeb--comment{
+    font-family: 'Thasadith Bold';
+    font-weight: bolder;
+    color: #87AACC;
+    padding: 30px;
+    margin-bottom: 30px;
+    cursor: pointer;
+}
+.BlogLovWeb--footer{
+    background-color: #fff;
+    border-top: 20px #779ECC solid;
+    padding: 30px;
+    text-align: center;
+}
