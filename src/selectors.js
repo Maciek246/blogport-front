@@ -1,11 +1,13 @@
 import { createSelector } from 'reselect'
 
-const filterBlogsByCategory = (state) => {
-    if(state.app.selectedCategory){
-        return state.blog.blogs.filter(e => e.category === state.app.selectedCategory);
+const filterBlogsByCategory = (state, filter) => {
+    // state.blog.blogs is undefine
+    // #TODO: Find a method to resolve
+    if(filter){
+        return state.blog.blogs.filter(e => e.category === filter);
     }
     else{
-        return [];
+        return state.blog.blogs ? state.blog.blogs : [];
     }
 }
 

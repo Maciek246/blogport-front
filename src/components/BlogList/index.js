@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import BlogTile from '../BlogTile';
 import { connect } from 'react-redux';
-import { blogSelector } from '../../selectors';
 
 import { fetch_blogs } from '../../actions/blogActions';
 
@@ -20,13 +19,13 @@ class BlogList extends Component{
     }
 
     render(){
-        const { blogs } = this.props;
+        const { blogs, category } = this.props;
         return (
             <div className="bloglist">
                 {
-                    blogs.length > 0 ?
-                    blogs.map(element => <BlogTile blog={element}/>):
-                    this.mock_blogs.map(element => <BlogTile blog={element}/>)
+                    blogs.length > 0 ? 
+                    filter_blogs_by_category(blogs, category).map(element => <BlogTile key={element.name} blog={element}/>):
+                    filter_blogs_by_category(this.mock_blogs, category).map(element => <BlogTile key={element.name} blog={element}/>)
                 } 
             </div>
         );
@@ -35,6 +34,7 @@ class BlogList extends Component{
 
 const mapStateToProps = (state) => {
     return {
+        category: state.app.selectedCategory,
         blogs: state.blog.blogs
     }
 }
@@ -43,6 +43,11 @@ const mapDispatchToProps = (dispatch) => {
     return {
         fetch_blogs: () => dispatch(fetch_blogs())
     }
+}
+
+const filter_blogs_by_category = (blogs, category) => {
+    if(!category) return blogs;
+    else return blogs.filter(e => e.category === category)
 }
 
 export default connect(mapStateToProps, mapDispatchToProps)(BlogList);

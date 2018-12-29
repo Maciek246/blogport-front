@@ -15,11 +15,12 @@ class CategoryNavbar extends Component{
                     <a>BlOGPoRt</a>
                 </span>
                 <span className="CategoryList">
-                    <a onClick={() => {this.props.selectCategory('Design')}}>Design</a>
-                    <a onClick={() => {this.props.selectCategory('Technology')}}>Technology</a>
-                    <a onClick={() => {this.props.selectCategory('Sport')}}>Sport</a>
-                    <a onClick={() => {this.props.selectCategory('Tavel')}}>Travel</a>
-                    <a onClick={() => {this.props.selectCategory('Lifestyle')}}>Lifestyle</a>
+                    <p onClick={() => {this.props.selectCategory('')}}>All</p>
+                    <p onClick={() => {this.props.selectCategory('Design')}}>Design</p>
+                    <p onClick={() => {this.props.selectCategory('Technology')}}>Technology</p>
+                    <p onClick={() => {this.props.selectCategory('Sport')}}>Sport</p>
+                    <p onClick={() => {this.props.selectCategory('Travel')}}>Travel</p>
+                    <p onClick={() => {this.props.selectCategory('Lifestyle')}}>Lifestyle</p>
                 </span>
             </div>
         );

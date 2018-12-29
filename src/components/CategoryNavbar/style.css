@@ -11,14 +11,14 @@
     color: #000;
     flex-direction: row;
 }
-.CategoryList a{
+.CategoryList p{
     text-decoration: none;
     color: #000;
     display: flex;
     padding: 5px 0px;
     transition: 0.3s ease-in-out color;
 }
-.CategoryList a:hover{
+.CategoryList p:hover{
     cursor: pointer;
     color: #e5b300;
     font-weight: 700;

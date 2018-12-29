@@ -1,7 +1,7 @@
 import { SET_CATEGORY } from '../actions/applicationActions';
 
 const initialState = {
-    selectedCategory: ''
+    selectedCategory: null
 }
 
 export const reducer = (state=initialState, action) => {
