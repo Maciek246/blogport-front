@@ -7,7 +7,7 @@ export const FETCHING_BLOGS_FAILS = 'FETCHING_BLOGS_FAILS';
 export function fetch_blogs(){
     return dispatch => {
         dispatch({type: FETCHING_BLOGS});
-        fetch(`${API_URL}/`)
+        fetch(`${API_URL}/blog`)
         .then(res => {
             if(res.ok){
                 return res.json();
@@ -23,14 +23,18 @@ export function fetch_blogs(){
     }
 }
 
-export function create_blog(token, blogname){
+export function create_blog(token, blogname, category){
     return dispatch => {
         fetch(`${API_URL}/`, {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',
                 'Authorization': `JWT ${token}`
-            }
+            },
+            body: JSON.stringify({
+                name: blogname,
+                category: category
+            })
         })
         .then(res => {
             if(res.ok){

@@ -1,23 +1,33 @@
 import React, { Component } from 'react';
 import BlogTile from '../BlogTile';
 import { connect } from 'react-redux';
+import { blogSelector } from '../../selectors';
 
 import { fetch_blogs } from '../../actions/blogActions';
 
 class BlogList extends Component{
 
     mock_blogs = [
-        {title: 'Test 1'},
-        {title: 'Test 2'},
-        {title: 'Test 3'},
-        {title: 'Test 4'},
-        {title: 'Test 5'},
+        {name: 'Test 1', slug: 'test-1', category: 'Design'},
+        {name: 'Test 2', slug: 'test-2', category: 'Design'},
+        {name: 'Test 3', slug: 'test-3', category: 'Travel'},
+        {name: 'Test 4', slug: 'test-4', category: 'Travel'},
+        {name: 'Test 5', slug: 'test-5', category: 'Travel'},
     ]
 
+    componentDidMount(){
+        this.props.fetch_blogs();
+    }
+
     render(){
+        const { blogs } = this.props;
         return (
             <div className="bloglist">
-                {this.mock_blogs.map(element => <BlogTile title={element.title}/>)} 
+                {
+                    blogs.length > 0 ?
+                    blogs.map(element => <BlogTile blog={element}/>):
+                    this.mock_blogs.map(element => <BlogTile blog={element}/>)
+                } 
             </div>
         );
     }

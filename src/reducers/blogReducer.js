@@ -9,11 +9,22 @@ const initialState = {
 export const reducer = (state=initialState, action) => {
     switch(action.type){
         case FETCHING_BLOGS:
-            return state;
+            return {
+                ...state,
+                fetching: true
+            };
         case FETCHING_BLOGS_SUCCESS:
-            return state;
+            return {
+                ...state,
+                blogs: action.payload.data,
+                fetching: false
+            };
         case FETCHING_BLOGS_FAILS:
-            return state;
+            return {
+                ...state,
+                fetching: false,
+                errors: action.payload
+            };
         default:
             return state;
     }
