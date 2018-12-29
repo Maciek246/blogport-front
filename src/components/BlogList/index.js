@@ -1,5 +1,8 @@
 import React, { Component } from 'react';
 import BlogTile from '../BlogTile';
+import { connect } from 'react-redux';
+
+import { fetch_blogs } from '../../actions/blogActions';
 
 class BlogList extends Component{
 
@@ -20,4 +23,16 @@ class BlogList extends Component{
     }
 }
 
-export default BlogList;
+const mapStateToProps = (state) => {
+    return {
+        blogs: state.blog.blogs
+    }
+}
+
+const mapDispatchToProps = (dispatch) => {
+    return {
+        fetch_blogs: () => dispatch(fetch_blogs())
+    }
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(BlogList);

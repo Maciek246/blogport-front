@@ -1,16 +1,21 @@
 import React, { Component } from 'react';
-import BlogList from './components/BlogList'
-import MainNavbar from './components/MainNavbar'
+import {BrowserRouter as Router, Route, Redirect} from 'react-router-dom';
+import MainNavbar from './components/MainNavbar';
+import MainPage from './components/MainPage';
+import BlogLovWeb from './components/BlogLovWeb';
 import './assets/css/fonts.css'
 
 class App extends Component {
   render() {
     return (
-      <div id="container">
-        <div className="MainNavbar">
-            <MainNavbar/>
-        </div>   
-        <BlogList/>
+      <div>
+        <MainNavbar/> 
+        <Router>
+          <div>
+            <Route path="/mainpage" component={MainPage}/>
+            <Route path="/bloglovweb" component={BlogLovWeb}/>
+          </div>
+        </Router>
       </div>
     );
   }
