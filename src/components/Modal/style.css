@@ -1,0 +1,38 @@
+body{
+    height: 100%;
+    color: #fff;
+    font-family: Major Mono;
+}
+.backdrop{
+    display: flex;
+    justify-content: center;
+    position: absolute;
+    top: 0px;
+    bottom: 0px;
+    left: 0px;
+    right: 0px;
+    height: 100vh;
+    background-color: rgba(255, 255, 255, 0.637);
+    padding: 10px;
+    font-size: 25px;
+    z-index: 99;
+}
+.modal{
+    text-align: center;
+    background-color: #E5B300;
+    border-radius: 5px;
+    width: 360px;
+    max-height: 400px;
+    margin: 10px;
+    padding: 30px;
+}
+.closeBtn{
+    display: flex;
+    justify-content: flex-start;
+    border: none;
+    background-color: transparent;
+    cursor: pointer;
+    font-family: "FontAwesome", "Open Sans";
+    color: #fff;
+    font-size: 20px;
+}

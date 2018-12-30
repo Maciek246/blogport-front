@@ -1,0 +1,42 @@
+.login--container{
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    align-self: center;
+    align-items: center;
+    flex-direction: column;
+}
+.error--info{
+    font-family: 'Thasadith Bold';
+    font-size: 16px;
+    color: red;
+}
+#passwordLabel, #loginLabel{
+    font-family: 'Thasadith Regular';
+}
+#login, #password{
+    font-family: 'Thasadith Regular';
+    font-size:16px;
+    padding:10px 10px 10px 5px;
+    margin: 5px;
+    display:block;
+    width:200px;
+    border:none;
+    border-bottom:3px solid #1b1ece;
+    border-radius: 5px;
+    transition: 0.1s ease-in-out border-bottom;
+}
+#login:focus, #password:focus{
+    border-bottom: none;
+}
+#submit{
+    font-family: 'Thasadith Regular';
+    color: #fff;
+    font-size: 20px;
+    border: 1px solid #fff;
+    background-color: transparent;
+    padding: 10px;
+    border-radius: 15px;
+    cursor: pointer;
+    
+}
