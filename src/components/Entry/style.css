@@ -1,0 +1,33 @@
+.Entry--content{
+    padding-bottom: 30px;
+    background-color: #fff;
+    width: 70%;
+}
+.Entry--title{
+    font-family: 'Thasadith Bold';
+    color: #E8B4A2;
+    text-align: center;
+    font-size: 35px;
+}
+.Entry--text{
+    font-family: 'Open Sans';
+    color: #000;
+    font-size: 16px;
+    text-align: justify;
+    padding: 10px 50px;
+}
+.Entry--dates{
+    font-family: 'Open Sans';
+    color: #000;
+    font-size: 13px;
+    text-align: justify;
+    padding: 10px 50px;
+}
+.Entry--comment{
+    font-family: 'Thasadith Bold';
+    font-weight: bolder;
+    color: #87AACC;
+    padding: 30px;
+    margin-bottom: 30px;
+    cursor: pointer;
+}
