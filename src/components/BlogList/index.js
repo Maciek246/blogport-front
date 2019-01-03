@@ -4,15 +4,9 @@ import { connect } from 'react-redux';
 
 import { fetch_blogs } from '../../actions/blogActions';
 
-class BlogList extends Component{
+import { mock_blogs } from '../../mocks';
 
-    mock_blogs = [
-        {name: 'Test 1', slug: 'test-1', category: 'Design'},
-        {name: 'Test 2', slug: 'test-2', category: 'Design'},
-        {name: 'Test 3', slug: 'test-3', category: 'Travel'},
-        {name: 'Test 4', slug: 'test-4', category: 'Travel'},
-        {name: 'Test 5', slug: 'test-5', category: 'Travel'},
-    ]
+class BlogList extends Component{
 
     componentDidMount(){
         this.props.fetch_blogs();
@@ -25,7 +19,7 @@ class BlogList extends Component{
                 {
                     blogs.length > 0 ? 
                     filter_blogs_by_category(blogs, category).map(element => <BlogTile key={element.name} blog={element}/>):
-                    filter_blogs_by_category(this.mock_blogs, category).map(element => <BlogTile key={element.name} blog={element}/>)
+                    filter_blogs_by_category(mock_blogs, category).map(element => <BlogTile key={element.name} blog={element}/>)
                 } 
             </div>
         );
