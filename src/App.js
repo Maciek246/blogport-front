@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import {BrowserRouter as Router, Route, Redirect} from 'react-router-dom';
 import MainNavbar from './components/MainNavbar';
 import MainPage from './components/MainPage';
+import AddPost from './components/AddPostPanel';
 import BlogLovWeb from './components/BlogLovWeb';
 import { Provider } from 'react-redux';
 import store from './stores';
@@ -15,7 +16,8 @@ class App extends Component {
         <Router>
           <React.Fragment>
             <Route exact path="/" component={MainPage} />
-            <Route path="/:slug" component={BlogLovWeb} />
+            <Route exact path="/:slug" component={BlogLovWeb} />
+            <Route exact path="/:slug/addpost" component={AddPost} /> 
             <Route path="/:category" component="" />
           </React.Fragment>
         </Router>
