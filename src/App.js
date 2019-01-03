@@ -16,8 +16,8 @@ class App extends Component {
         <Router>
           <React.Fragment>
             <Route exact path="/" component={MainPage} />
-            <Route path="/bloglovweb" component={BlogLovWeb} />
-            <Route path="/addpost" component={AddPost} />
+            <Route exact path="/:slug" component={BlogLovWeb} />
+            <Route exact path="/:slug/addpost" component={AddPost} /> 
             <Route path="/:category" component="" />
           </React.Fragment>
         </Router>
