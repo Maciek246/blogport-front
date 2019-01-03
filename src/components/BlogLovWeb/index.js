@@ -1,6 +1,8 @@
 import React, {Component} from 'react';
 import Entry from '../Entry';
 import './style.css';
+import CommentForm from '../AddCommentForm';
+import CreatedComment from '../CreatedComment';
 import header from '../../assets/images/weddingheader.png';
 
 import { mock_entries } from '../../mocks';
@@ -22,7 +24,10 @@ class BlogLovWeb extends Component{
                     adipisicing. Officia nisi ipsum nostrud adipisicing id nulla eiusmod anim officia ipsum qui 
                     incididunt pariatur. Nisi et laboris Lorem velit adipisicing.</p>
                 </div>
+                
                 </div>
+                <CommentForm/>
+                <CreatedComment/>
             </div>
         );
     }
