@@ -1,3 +1,28 @@
-.blogtile{
-    font-family: Thasadith Bold;
+.BlogTile--container{
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    align-items: center;
+    align-self: center;
+    flex-direction: column;
+    border: 0.5px solid black;
+    transition: ease 0.5s border;
+    border-radius: 10px 30px;
+    margin: 20px 10%; 
+    padding: 20px; 
+}
+.BlogTile--container:hover{
+    border: 1px solid #1b1ece;
+}
+.BlogTile--title{
+    font-family: 'Thasadith Bold';
+}
+.BlogTile--author{
+    color: #000;
+}
+.BlogTile--category{
+    color: #000;
+}
+.BlogTile--description{
+    color: #000;
 }
