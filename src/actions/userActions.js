@@ -1,5 +1,4 @@
 const API_URL = 'http://localhost:8080';
-// 'Authorization': `JWT ${token}`
 
 export const LOGIN = 'LOGIN';
 export const LOGIN_SUCCESS = 'LOGIN_SUCCESS';
