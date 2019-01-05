@@ -12,13 +12,12 @@ class App extends Component {
   render() {
     return (
       <Provider store={store}>
-        <MainNavbar/> 
+        <MainNavbar/>
         <Router>
           <React.Fragment>
             <Route exact path="/" component={MainPage} />
             <Route exact path="/:slug" component={BlogLovWeb} />
             <Route exact path="/:slug/addpost" component={AddPost} /> 
-            <Route path="/:category" component="" />
           </React.Fragment>
         </Router>
       </Provider>

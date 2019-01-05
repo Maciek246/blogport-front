@@ -12,7 +12,7 @@ export function login(username, password){
         dispatch({type: LOGIN});
         fetch(`${API_URL}/user/login`, {
             method: 'POST',
-            body: JSON.stringfy({username: username, password: password}),
+            body: JSON.stringify({username: username, password: password}),
             headers: {
                 'Content-Type': 'application/json'
             }
@@ -20,7 +20,7 @@ export function login(username, password){
             if(res.ok){
                 return res.json();
             }
-            else return res.text().then(text => {throw new Error(text)});
+            else return res.json().then(err => {throw new Error(err.message)});
         }).then(json => {
             dispatch({type: LOGIN_SUCCESS, payload: json})
         }).catch(err => {
