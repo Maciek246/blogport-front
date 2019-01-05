@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import Entry from '../Entry';
 import './style.css';
+import CommentForm from '../AddCommentForm';
+import CreatedComment from '../CreatedComment';
 import header from '../../assets/images/weddingheader.png';
 
 import { mock_entries } from '../../mocks';
@@ -25,6 +27,8 @@ Aliquip commodo id id incididunt ad in eiusmod. Consectetur culpa esse proident 
             </p>
           </div>
         </div>
+      <CommentForm/>
+      <CreatedComment/>
       </div>
     );
   }
