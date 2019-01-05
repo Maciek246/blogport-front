@@ -1,7 +1,19 @@
 import React, { Component } from 'react';
 import './style.css';
+import CommentContainer from '../CommentContainer';
 
 class Entry extends Component{
+    constructor(){
+        super()
+        this.state = {
+            isHidden: true
+        }
+    }
+    toggleHidden() {
+        this.setState({
+            isHidden: !this.state.isHidden
+        })
+    }
     render(){
         const { title, content, createdAt, updatedAt } = this.props.entry;
         return(
@@ -11,7 +23,8 @@ class Entry extends Component{
                    {content}
                 </p>
                 <p className="Entry--dates">Dodano: {createdAt} Edytowano: {updatedAt}</p>
-                <a className="Entry--comment" >Skomentuj</a>
+                <a className="Entry--comment" onClick={this.toggleHidden.bind(this)} >Skomentuj</a>
+                {!this.state.isHidden && <CommentContainer/>}
             </div>
         );
     }
