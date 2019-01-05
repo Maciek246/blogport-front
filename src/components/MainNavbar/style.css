@@ -37,10 +37,13 @@
     padding-top: 10px;
     padding-bottom:10px;
     border-radius: 20px;
-    border: 2px double #e5b300;;
+    border: none;
     width:150px;
     margin:5px;
     cursor: pointer;
+}
+.blue{
+  background-color: #1b1ece;
 }
 #search {
   font-family: "FontAwesome", "Open Sans";
