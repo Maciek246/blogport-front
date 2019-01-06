@@ -1,0 +1,45 @@
+.UserPanel--container{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-content: center;
+    align-items: center;
+    align-self: center;
+    color: black;
+}
+.UserPanel--title, .UserPanel--titlePass{
+    font-family: 'Thasadith Bold';
+}
+.UserPanel--deleteButton{
+    cursor: pointer;
+    color: #1b1ece;
+    font-size: 18px;
+    letter-spacing: 1px;
+    margin: 10px;
+    margin-bottom: 20px;
+}
+.UserPanel--legend{
+    text-align: center;
+    padding: 0px 30px;
+    color: #1b1ece;
+}
+.UserPanel--fieldset{
+    text-align: center;
+    width: 50%;
+    margin-bottom: 30px;
+}
+.UserPanel--passwordInput{
+    margin-bottom: 20px;
+    font-size: 16px;
+}
+.UserPanel--submit{
+    background-color:  #e5b300;
+    border: none;
+    border-radius: 20px;
+    width: 25%;
+    padding: 10px;
+    color: #fff;
+    font-size: 16px;
+    cursor: pointer;
+    margin-bottom: 20px;
+}
