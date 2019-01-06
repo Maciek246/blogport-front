@@ -25,9 +25,6 @@ class UserPanel extends Component{
                         <br/>
                         <input type="submit" name="submit" value="Zmień hasło" className="UserPanel--submit"/>
                 </fieldset>
-                
-
-                
             </div>
         );
     }

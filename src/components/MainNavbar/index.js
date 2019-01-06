@@ -37,8 +37,7 @@ class MainNavbar extends Component {
             </div>
             <Modal show={this.state.modalLoginIsOpen} onClose={this.toggleModalLogin}>
           <LoginForm />
-        </Modal>
-                
+        </Modal>  
         <Modal show={this.state.modalRegisterIsOpen} onClose={this.toggleModalRegister}>
           <RegisterForm />
         </Modal>
