@@ -5,26 +5,22 @@ import MainPage from './components/MainPage';
 import AddPost from './components/AddPostPanel';
 import BlogLovWeb from './components/BlogLovWeb';
 import UserPanel from './components/UserPanel';
-import { CurrentUserProvider } from './context/CurrentUser.context.js'
 import { Provider } from 'react-redux';
 import store from './stores';
-import './assets/css/fonts.css'
+import './assets/css/fonts.css';
 
 class App extends Component {
   render() {
     return (
       <Provider store={store}>
-
         <Router>
           <React.Fragment>
-            <CurrentUserProvider>
-              <MainNavbar />
-              <Route exact path="/" component={MainPage} />
-              <Route exact path="/user/:username" component={UserPanel} />
-              <Route exact path="/:slug" component={BlogLovWeb} />
-              <Route exact path="/:slug/addpost" component={AddPost} />
-              <Route path="/:category" component="" />
-            </CurrentUserProvider>
+            <MainNavbar />
+            <Route exact path="/" component={MainPage} />
+            <Route exact path="/user/:username" component={UserPanel} />
+            <Route exact path="/:slug" component={BlogLovWeb} />
+            <Route exact path="/:slug/addpost" component={AddPost} />
+            <Route path="/:category" component="" />
           </React.Fragment>
         </Router>
       </Provider>

@@ -5,8 +5,6 @@ import LoginForm from '../LoginForm';
 import RegisterForm from '../RegisterForm';
 import './style.css';
 import 'font-awesome/css/font-awesome.min.css';
-import { CurrentUserConsumer } from '../../context/CurrentUser.context'
-
 
 class MainNavbar extends Component {
   constructor(props) {
@@ -23,9 +21,8 @@ class MainNavbar extends Component {
     this.setState({ modalRegisterIsOpen: !this.state.modalRegisterIsOpen });
   }
 
-
-
   render() {
+    let isAuthenticated = true;
     return (
       <nav>
         <div className="main-navbar">
@@ -34,28 +31,20 @@ class MainNavbar extends Component {
               <input id="search" type="text" placeholder=" &#xF002; Podaj szukaną frazę" />
             </div>
           </div>
-          <CurrentUserConsumer>
-            {({ user, logout }) => (
+          <div className="main-navbar main-navbar--content-right">
+            {isAuthenticated ?
               <div className="main-navbar main-navbar--content-right">
-                {user
-                  ? <div>{user.name}.
-                      <div className="main-navbar main-navbar--content-right">
-                      <Link to="/user/:username"><button className="button--main-navbar blue">Twoje konto</button></Link>
-                      <Link to="/:slug/addpost"><button className="button--main-navbar blue">Utwórz nowy post</button></Link>
-                      <button className="button--main-navbar" onClick={logout}>Wyloguj się</button>
-                    </div>
-                  </div>
-                  : <div>
-                    <div className="main-navbar main-navbar--content-right">
-                      <button className="button--main-navbar" onClick={this.toggleModalRegister}>Zarejestruj się</button>
-                      <button className="button--main-navbar" onClick={this.toggleModalLogin}>Zaloguj się</button>
-                    </div>
-                  </div>
-                }
+                <Link to="/user/:username"><button className="button--main-navbar blue">Twoje konto</button></Link>
+                <Link to="/:slug/addpost"><button className="button--main-navbar blue">Utwórz nowy post</button></Link>
+                <button className="button--main-navbar">Wyloguj się</button>
               </div>
-            )}
-
-          </CurrentUserConsumer>
+              :
+              <div className="main-navbar main-navbar--content-right">
+                <button className="button--main-navbar" onClick={this.toggleModalRegister}>Zarejestruj się</button>
+                <button className="button--main-navbar" onClick={this.toggleModalLogin}>Zaloguj się</button>
+              </div>
+            }
+          </div>
         </div>
         <Modal show={this.state.modalLoginIsOpen} onClose={this.toggleModalLogin}>
           <LoginForm />
