@@ -7,21 +7,6 @@ import './style.css';
 import 'font-awesome/css/font-awesome.min.css';
 import { CurrentUserConsumer } from '../../context/CurrentUser.context'
 
-const userLinks = (
-  <div className="main-navbar main-navbar--content-right">
-    <Link to="/user/:username"><button className="button--main-navbar blue">Twoje konto</button></Link>
-    <Link to="/:slug/addpost"><button className="button--main-navbar blue">Utwórz nowy post</button></Link>
-    <a href="#" className="button--main-navbar">Wyloguj się</a>
-  </div>
-);
-
-const guestLinks = (toggleModalRegister, toggleModalLogin) => (
-  <div className="main-navbar main-navbar--content-right">
-    <Link to="/user/:username"> <button className="button--main-navbar blue">Twoje konto</button></Link>
-    <button className="button--main-navbar" onClick={this.toggleModalRegister}>Zarejestruj się</button>
-    <button className="button--main-navbar" onClick={this.toggleModalLogin}>Zaloguj się</button>
-  </div>
-);
 
 class MainNavbar extends Component {
   constructor(props) {
@@ -53,8 +38,19 @@ class MainNavbar extends Component {
             {({ user, logout }) => (
               <div className="main-navbar main-navbar--content-right">
                 {user
-                  ? <div>{user.name}.{userLinks}</div>
-                  : <div>{guestLinks}</div>
+                  ? <div>{user.name}.
+                      <div className="main-navbar main-navbar--content-right">
+                      <Link to="/user/:username"><button className="button--main-navbar blue">Twoje konto</button></Link>
+                      <Link to="/:slug/addpost"><button className="button--main-navbar blue">Utwórz nowy post</button></Link>
+                      <button className="button--main-navbar" onClick={logout}>Wyloguj się</button>
+                    </div>
+                  </div>
+                  : <div>
+                    <div className="main-navbar main-navbar--content-right">
+                      <button className="button--main-navbar" onClick={this.toggleModalRegister}>Zarejestruj się</button>
+                      <button className="button--main-navbar" onClick={this.toggleModalLogin}>Zaloguj się</button>
+                    </div>
+                  </div>
                 }
               </div>
             )}
