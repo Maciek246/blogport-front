@@ -35,6 +35,7 @@ class MainNavbar extends Component {
             {isAuthenticated ?
               <div className="main-navbar main-navbar--content-right">
                 <Link to="/user/:username"><button className="button--main-navbar blue">Twoje konto</button></Link>
+                <Link to="/:addblog"><button className="button--main-navbar blue">Utwórz nowy blog</button></Link>
                 <Link to="/:slug/addpost"><button className="button--main-navbar blue">Utwórz nowy post</button></Link>
                 <button className="button--main-navbar">Wyloguj się</button>
               </div>
