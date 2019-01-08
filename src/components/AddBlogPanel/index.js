@@ -3,6 +3,12 @@ import './style.css';
 
 class AddBlogPanel extends Component {
 
+    handleselectedFile = (event) => {
+        this.setState({
+            selectedFile: event.target.files[0],
+            loaded: 0,
+        })
+    }
     render() {
         return (
             <form>
@@ -12,7 +18,7 @@ class AddBlogPanel extends Component {
                     <input type="text" className="AddBlogPanel--input" placeholder="Podaj nazwę Bloga" />
                     <br />
                     <div>
-                        <label className="AddBlogPanel--label">Wybierz kategorię bloga:
+                        <label className="AddBlogPanel--label-first">Wybierz kategorię bloga:
                         <br />
                             <select className="AddBlogPanel--select" onChange={this.props.handleOnChange}>
                                 <option value="">All</option>
@@ -22,6 +28,11 @@ class AddBlogPanel extends Component {
                                 <option value="Travel">Travel</option>
                                 <option value="Lifestyle">Lifestyle</option>
                             </select>
+                        </label>
+                        <br /><br />
+                        <label className="AddBlogPanel--label-second">Dodaj logo w postaci pliku:
+                    <br />
+                            <input className="AddBlogPanel--file" type="file" onChange={this.handleselectedFile} />
                         </label>
                     </div>
                     <br />

@@ -24,8 +24,15 @@
     text-align: center;
     border: none;
 }
-.AddBlogPanel--select{
+.AddBlogPanel--label-first{
     font-size: 16px;
+    font-family: 'Thasadith Bold';
+}
+
+.AddBlogPanel--label-second{
+    margin-top: 4%;
+    font-size: 16px;
+    font-family: 'Thasadith Bold';
 }
 
 .AddBlogPanel--select{
@@ -36,6 +43,14 @@
     width: 100%;
     color: #1b1ece;
     font-size: 18px;
+    padding: 10px;
+    border-radius: 20px;
+    cursor: pointer;
+}
+.AddBlogPanel--file{
+    font-family: 'Thasadith Bold';
+    color: #fff;;
+    font-size: 12px;
     padding: 10px;
     border-radius: 20px;
     cursor: pointer;
