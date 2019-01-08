@@ -24,17 +24,17 @@ class RegisterForm extends Component{
                     <br/>
                 <label for="login" className="regLabel">Username:
                     <br/>
-                    <input type="text" id="username" name="login"></input>
+                    <input type="text" id="username" name="login" required/>
                 </label>
                     <br/>
                 <label for="regPass1" className="regLabel">Hasło: 
                     <br/>
-                    <input type="password" id="regPass1" name="regPass1"/>
+                    <input type="password" id="regPass1" name="regPass1" required/>
                 </label>
                     <br/>
                 <label for="regPass2" className="regLabel">Powtórz hasło: 
                     <br/>
-                    <input type="password" id="regPass2" name="regPass2"/>
+                    <input type="password" id="regPass2" name="regPass2" required/>
                 </label>
                     <br/>
                 <input type="submit" id="submit" value="Zaloguj" />
