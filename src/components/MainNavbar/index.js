@@ -22,7 +22,7 @@ class MainNavbar extends Component {
   }
 
   render() {
-    let isAuthenticated = true;
+    let isAuthenticated = false;
     return (
       <nav>
         <div className="main-navbar">
