@@ -1,0 +1,38 @@
+.AddBlogPanel--container{
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    align-items: center;
+    align-content: center;
+    flex-direction: column;
+    color: #fff;
+    background-color: #1b1ece;
+    margin: 30px;
+    padding: 10px;
+    height: 100%;
+}
+.AddBlogPanel--title{
+    font-family: 'Major Mono';
+    font-size: 2.5rem;
+}
+.AddBlogPanel--input{
+    width: 75%;
+    font-size: 25px;
+    padding: 10px;
+    font-family: 'Thasadith Bold';
+    border-radius: 10px 10px 0px 0px;
+    text-align: center;
+    border: none;
+}
+
+.AddBlogPanel--submit{
+    border: #fff;
+    background-color: #fff;
+    font-family: 'Thasadith Bold';
+    width: 20%;
+    color: #1b1ece;
+    font-size: 16px;
+    padding: 10px;
+    border-radius: 20px;
+    cursor: pointer;
+}
