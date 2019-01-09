@@ -15,12 +15,12 @@ class AddBlogPanel extends Component {
                 <div className="AddBlogPanel--container">
                     <h1 className="AddBlogPanel--title">DODAJ BLOGA</h1>
                     <br />
-                    <input type="text" className="AddBlogPanel--input" placeholder="Podaj nazwę Bloga" />
+                    <input type="text" className="AddBlogPanel--input" placeholder="Podaj nazwę Bloga" required />
                     <br />
                     <div>
                         <label className="AddBlogPanel--label-first">Wybierz kategorię bloga:
                         <br />
-                            <select className="AddBlogPanel--select" onChange={this.props.handleOnChange}>
+                            <select className="AddBlogPanel--select" onChange={this.props.handleOnChange} required>
                                 <option value="">All</option>
                                 <option value="Design">Design</option>
                                 <option value="Technology">Technology</option>
@@ -32,7 +32,7 @@ class AddBlogPanel extends Component {
                         <br /><br />
                         <label className="AddBlogPanel--label-second">Dodaj logo w postaci pliku:
                     <br />
-                            <input className="AddBlogPanel--file" type="file" onChange={this.handleselectedFile} />
+                            <input className="AddBlogPanel--file" type="file" onChange={this.handleselectedFile} required />
                         </label>
                     </div>
                     <br />
