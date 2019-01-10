@@ -8,7 +8,7 @@
 }
 .error--info{
     font-family: 'Thasadith Bold';
-    font-size: 16px;
+    font-size: 14px;
     color: red;
 }
 #passwordLabel, #loginLabel{
@@ -30,9 +30,16 @@
     font-family: 'Thasadith Regular';
     color: #fff;
     font-size: 20px;
+    width: 180px;
     border: 1px solid #fff;
     background-color: transparent;
     padding: 10px;
     border-radius: 15px;
     cursor: pointer;
+}
+.errorMessage{
+    font-family: 'Thasadith Bold';
+    color: red;
+    margin-bottom: 10px;
+    font-size: 16px;
 }
