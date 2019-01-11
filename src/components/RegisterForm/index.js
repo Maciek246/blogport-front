@@ -45,7 +45,7 @@ class RegisterForm extends Component{
           emailError = "Błędny email";
         }
         if(!this.state.username){
-            usernameError = "Podaj hasło!";
+            usernameError = "Podaj nazwę użytkownika!";
         }
         if(!this.state.password1){
             password1Error = "Podaj hasło!";
@@ -95,21 +95,21 @@ class RegisterForm extends Component{
                 <output className="error--info">{this.state.emailError}</output>
                 </label>
                     <br/>
-                <label for="login" className="regLabel">Username:
+                <label for="username" className="regLabel">Nazwa użytkownika:
                     <br/>
-                    <input type="text" id="username" name="login"/>
+                    <input type="text" id="username" name="username"/>
                     <br/>
                     <output className="error--info">{this.state.usernameError}</output>
                 </label>
                     <br/>
-                <label for="regPass1" className="regLabel">Hasło: 
+                <label for="password1" className="regLabel">Hasło: 
                     <br/>
                     <input type="password" id="regPass1" name="password1" value={this.state.password1} onChange={this.handleChange}/>
                     <br/>
                     <output className="error--info">{this.state.password1Error}</output>
                 </label>
                     <br/>
-                <label for="regPass2" className="regLabel">Powtórz hasło: 
+                <label for="password2" className="regLabel">Powtórz hasło: 
                     <br/>
                     <input type="password" id="regPass2" name="password2" value={this.state.password2} onChange={this.handleChange}/>
                     <br/>
