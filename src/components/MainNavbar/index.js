@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { Link } from "react-router-dom";
 import Modal from '../Modal';
 import LoginForm from '../LoginForm';
 import RegisterForm from '../RegisterForm';
@@ -23,14 +24,12 @@ class MainNavbar extends Component {
   }
 
   render() {
-    let isAuthenticated = false;
+    let isAuthenticated = true;
     return (
       <nav>
         <div className="main-navbar">
           <div className="main-navbar main-navbar--content-left">
-            <div className="main-navbar main-navbar--search">
-              <input id="search" type="text" placeholder=" &#xF002; Podaj szukaną frazę" />
-            </div>
+            <Link to="/" className="BlogPort--title">BlOGPoRt</Link>
           </div>
           <div className="main-navbar main-navbar--content-right">
             {isAuthenticated ?

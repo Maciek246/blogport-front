@@ -11,7 +11,7 @@ class ButtonNavLogged extends Component {
           <div className="main-navbar main-navbar--content-right">
               <div className="main-navbar main-navbar--content-right">
                 <Link to="/user/:username"><button className="button--main-navbar blue">Twoje konto</button></Link>
-                <Link to="/blog/:slug/addpost"><button className="button--main-navbar blue">Utwórz nowy post</button></Link>
+                <Link to="/addblog"><button className="button--main-navbar blue">Utwórz blog</button></Link>
                 <button className="button--main-navbar">Wyloguj się</button>
               </div>
           </div>
