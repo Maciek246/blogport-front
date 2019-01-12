@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import { BrowserRouter as Route, Link } from 'react-router-dom';
 import Modal from '../Modal';
 import LoginForm from '../LoginForm';
 import RegisterForm from '../RegisterForm';

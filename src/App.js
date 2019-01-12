@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { BrowserRouter as Router, Route, Redirect } from 'react-router-dom';
+import { BrowserRouter as Router, Route } from 'react-router-dom';
 import MainNavbar from './components/MainNavbar';
 import MainPage from './components/MainPage';
 import AddPost from './components/AddPostPanel';
@@ -20,10 +20,9 @@ class App extends Component {
             <MainNavbar />
             <Route exact path="/" component={MainPage} />
             <Route exact path="/user/:username" component={UserPanel} />
-            <Route exact path="/addblog/slug" component={BlogLovWeb} />
-            <Route exact path="/:slug/addpost" component={AddPost} />
             <Route exact path="/addblog" component={AddBlog} />
-            <Route path="/:category" component="" />
+            <Route exact path="/blog/:slug" component={BlogLovWeb} />
+            <Route exact path="/blog/:slug/addpost" component={AddPost} />
           </React.Fragment>
         </Router>
       </Provider>
