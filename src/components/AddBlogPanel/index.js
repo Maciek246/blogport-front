@@ -8,10 +8,8 @@ class AddBlogPanel extends Component {
             fields: {},
             errors: {}
         }
-
         this.handleChange = this.handleChange.bind(this);
         this.submitAddBlogForm = this.submitAddBlogForm.bind(this);
-
     };
     handleChange(e) {
         let fields = this.state.fields;
@@ -19,9 +17,7 @@ class AddBlogPanel extends Component {
         this.setState({
             fields
         });
-
     }
-
     submitAddBlogForm(e) {
         e.preventDefault();
         if (this.validateForm()) {
@@ -32,7 +28,6 @@ class AddBlogPanel extends Component {
             this.setState({ fields: fields });
             alert("Form submitted");
         }
-
     }
     handleselectedFile = (event) => {
         this.setState({
@@ -41,11 +36,9 @@ class AddBlogPanel extends Component {
         })
     }
     validateForm() {
-
         let fields = this.state.fields;
         let errors = {};
         let formIsValid = true;
-
         if (!fields["title"]) {
             formIsValid = false;
             errors["title"] = "To pole jest wymagane. Proszę podać tytuł bloga!";
@@ -77,7 +70,7 @@ class AddBlogPanel extends Component {
                     <div className="errorMessage">{this.state.errors.title}</div>
                     <div>
                         <label className="AddBlogPanel--label-first">Wybierz kategorię bloga:
-                        <br />
+                        <br/>
                             <select className="AddBlogPanel--select" name="category" value={this.state.fields.category} onChange={this.handleChange}>
                                 <option value="">All</option>
                                 <option value="Design">Design</option>
@@ -91,12 +84,12 @@ class AddBlogPanel extends Component {
                         <div className="errorMessage">{this.state.errors.category}</div>
                         <br /><br />
                         <label className="AddBlogPanel--label-second">Dodaj logo w postaci pliku:
-                    <br />
+                        <br/>
                             <input className="AddBlogPanel--file" type="file" name="logoFile" value={this.state.fields.logoFile} onChange={this.handleChange} />
                         </label>
                         <div className="errorMessage">{this.state.errors.logoFile}</div>
                     </div>
-                    <br />
+                        <br />
                     <input type="submit" className="AddBlogPanel--submit" />
                     <br />
                 </div>
