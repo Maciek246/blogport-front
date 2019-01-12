@@ -10,7 +10,7 @@ class AddBlogPanel extends Component {
         }
 
         this.handleChange = this.handleChange.bind(this);
-        this.submitaddBlogForm = this.submitaddBlogForm.bind(this);
+        this.submitAddBlogForm = this.submitAddBlogForm.bind(this);
 
     };
     handleChange(e) {
@@ -22,7 +22,7 @@ class AddBlogPanel extends Component {
 
     }
 
-    submitaddBlogForm(e) {
+    submitAddBlogForm(e) {
         e.preventDefault();
         if (this.validateForm()) {
             let fields = {};
@@ -68,7 +68,7 @@ class AddBlogPanel extends Component {
 
     render() {
         return (
-            <form name="addBlogForm" onSubmit={this.submitaddBlogForm}>
+            <form name="addBlogForm" onSubmit={this.submitAddBlogForm}>
                 <div className="AddBlogPanel--container">
                     <h1 className="AddBlogPanel--title">DODAJ NOWEGO BLOGA</h1>
                     <br />

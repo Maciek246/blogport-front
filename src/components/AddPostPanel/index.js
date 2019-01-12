@@ -10,7 +10,7 @@ class AddPostPanel extends Component {
         }
 
         this.handleChange = this.handleChange.bind(this);
-        this.submitaddPostForm = this.submitaddPostForm.bind(this);
+        this.submitAddPostForm = this.submitAddPostForm.bind(this);
 
     };
     handleChange(e) {
@@ -22,7 +22,7 @@ class AddPostPanel extends Component {
 
     }
 
-    submitaddPostForm(e) {
+    submitAddPostForm(e) {
         e.preventDefault();
         if (this.validateForm()) {
             let fields = {};
@@ -57,7 +57,7 @@ class AddPostPanel extends Component {
 
     render() {
         return (
-            <form name="addPostForm" onSubmit={this.submitaddPostForm}>
+            <form name="addPostForm" onSubmit={this.submitAddPostForm}>
                 <div className="AddPostPanel--container">
                     <h1 className="AddPostPanel--title">DODAJ NOWEGO POSTA</h1>
                     <br />
