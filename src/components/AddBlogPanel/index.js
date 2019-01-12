@@ -70,7 +70,7 @@ class AddBlogPanel extends Component {
         return (
             <form name="addBlogForm" onSubmit={this.submitAddBlogForm}>
                 <div className="AddBlogPanel--container">
-                    <h1 className="AddBlogPanel--title">DODAJ NOWEGO BLOGA</h1>
+                    <h1 className="AddBlogPanel--title">DoDAj nOWego BlOgA</h1>
                     <br />
                     <input type="text" name="title" className="AddBlogPanel--input" value={this.state.fields.title} onChange={this.handleChange} placeholder="Podaj nazwę Bloga" />
                     <br />
