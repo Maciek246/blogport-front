@@ -1,4 +1,4 @@
-.AddPostPanel--container{
+.AddBlogPanel--container{
     display: flex;
     justify-content: center;
     align-content: center;
@@ -9,13 +9,13 @@
     background-color: #1b1ece;
     margin: 30px;
     padding: 10px;
-    height: 90%;
+    height: 100%;
 }
-.AddPostPanel--title{
+.AddBlogPanel--title{
     font-family: 'Major Mono';
     font-size: 2.5rem;
 }
-.AddPostPanel--input{
+.AddBlogPanel--input{
     width: 75%;
     font-size: 25px;
     padding: 10px;
@@ -24,16 +24,39 @@
     text-align: center;
     border: none;
 }
-.AddPostPanel--textPost{
-    width: 80%;
-    font-size: 19px;
-    height: 250px;
-    padding: 5px;
-    font-family: 'Open Sans';
-    text-align: justify;
-    border: none;
+.AddBlogPanel--label-first{
+    font-size: 16px;
+    font-family: 'Thasadith Bold';
 }
-.AddPostPanel--submit{
+
+.AddBlogPanel--label-second{
+    margin-top: 4%;
+    font-size: 16px;
+    font-family: 'Thasadith Bold';
+}
+
+.AddBlogPanel--select{
+    margin-top:4%;
+    border: #fff;
+    background-color: #fff;
+    font-family: 'Thasadith Bold';
+    width: 100%;
+    color: #1b1ece;
+    font-size: 18px;
+    padding: 10px;
+    border-radius: 20px;
+    cursor: pointer;
+}
+.AddBlogPanel--file{
+    font-family: 'Thasadith Bold';
+    color: #fff;;
+    font-size: 12px;
+    padding: 10px;
+    border-radius: 20px;
+    cursor: pointer;
+}
+
+.AddBlogPanel--submit{
     border: #fff;
     background-color: #fff;
     font-family: 'Thasadith Bold';

@@ -5,12 +5,13 @@ import './style.css';
 class BlogTile extends Component{
     render(){
         const { blog } = this.props;
+        const slug = `/blog/${blog.slug}`;
         return (
             <div className="BlogTile--container">
-                <h1 className="BlogTile--title"><Link to={blog.slug} style={{ textDecoration: 'none', color: '#e5b300' }}>{blog.name}</Link></h1>
-                <div className="BlogTile--author">AUTOR</div>
-                <div className="BlogTile--category">KATEGORIA</div>
-                <div className="BlogTile--description">OPIS</div>
+                <h1 className="BlogTile--title"><Link to={slug} style={{ textDecoration: 'none', color: '#e5b300' }}>{blog.name}</Link></h1>
+                <div className="BlogTile--author">{blog.author}</div>
+                <div className="BlogTile--category">{blog.categor}</div>
+                <div className="BlogTile--description">{blog.description}</div>
             </div>
         );
     }

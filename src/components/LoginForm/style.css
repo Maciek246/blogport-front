@@ -26,9 +26,6 @@
     border-radius: 5px;
     transition: 0.1s ease-in-out border-bottom;
 }
-#login:focus, #password:focus{
-    border-bottom: none;
-}
 #submit{
     font-family: 'Thasadith Regular';
     color: #fff;
@@ -38,5 +35,4 @@
     padding: 10px;
     border-radius: 15px;
     cursor: pointer;
-    
 }
