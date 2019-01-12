@@ -20,9 +20,9 @@ class App extends Component {
             <MainNavbar />
             <Route exact path="/" component={MainPage} />
             <Route exact path="/user/:username" component={UserPanel} />
-            <Route exact path="/:addblog/slug" component={BlogLovWeb} />
+            <Route exact path="/addblog/slug" component={BlogLovWeb} />
             <Route exact path="/:slug/addpost" component={AddPost} />
-            <Route exact path="/:addblog" component={AddBlog} />
+            <Route exact path="/addblog" component={AddBlog} />
             <Route path="/:category" component="" />
           </React.Fragment>
         </Router>
