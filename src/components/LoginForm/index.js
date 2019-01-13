@@ -37,11 +37,11 @@ class LoginForm extends Component{
                 <p>{this.props.error}</p>
                 <span className="error--info"></span>
                 <br/>
-                <label for="login" id="loginLabel"> Login
+                <label htmlFor="login" id="loginLabel"> Login
                   <br/>
                   <input type="text" id="login" onChange={this.handleUsername} name="login" required/>
                 </label>
-                <label for="password" id="passwordLabel"> Hasło
+                <label htmlFor="password" id="passwordLabel"> Hasło
                   <input type="password" id="password" onChange={this.handlePassword} name="password" required />
                 </label>
               <br/>

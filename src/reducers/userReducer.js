@@ -1,4 +1,4 @@
-import { LOGIN, LOGIN_SUCCESS, LOGIN_FAIL, LOGOUT } from '../actions/userActions';
+import { LOGIN, LOGIN_SUCCESS, LOGIN_FAIL, LOGOUT, REGISTER, REGISTER_SUCCESS, REGISTER_FAIL } from '../actions/userActions';
 
 const initialState = {
     username: '',
@@ -37,6 +37,23 @@ export const reducer = (state=initialState, action) => {
                 token: "",
                 email: "",
                 error: null
+            };
+        case REGISTER:
+            return {
+                ...state,
+                loading: true
+            };
+        case REGISTER_SUCCESS:
+            return {
+                ...state,
+                loading: false,
+                error: null
+            };
+        case REGISTER_FAIL:
+            return {
+                ...state,
+                loading: false,
+                error: action.payload.message
             };
         default:
             return state;
