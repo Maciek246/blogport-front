@@ -1,0 +1,8 @@
+.CategoryError--error{
+   display: flex;
+   color: red;
+   justify-content: center;
+   align-content: center;
+   align-items: center;
+   align-self: center
+}
