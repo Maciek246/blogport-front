@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
+import CategoryError from '../CategoryError';
 import './style.css';
 
 class BlogTile extends Component{
