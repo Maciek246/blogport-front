@@ -42,6 +42,15 @@
     margin:5px;
     cursor: pointer;
 }
+.BlogPort--title{
+  display: flex;
+  justify-content: center;
+  font-family: Major Mono;
+  font-size: 64px;
+  color: #1b1ece;
+  background-color: #fff;
+  text-decoration: none;
+}
 .blue{
   background-color: #1b1ece;
 }

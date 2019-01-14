@@ -34,9 +34,7 @@ class BlogLovWeb extends Component{
                 }
 
                 <div className="BlogLovWeb--footer">
-                <p>Aliquip commodo id id incididunt ad in eiusmod. Consectetur culpa esse proident adipisicing est 
-                    adipisicing. Officia nisi ipsum nostrud adipisicing id nulla eiusmod anim officia ipsum qui 
-                    incididunt pariatur. Nisi et laboris Lorem velit adipisicing.</p>
+                
                 </div>
                 
                 </div>

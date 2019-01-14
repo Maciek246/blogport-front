@@ -7,6 +7,7 @@ import AddBlog from './components/AddBlogPanel';
 import BlogLovWeb from './components/BlogLovWeb';
 import UserPanel from './components/UserPanel';
 import { Provider } from 'react-redux';
+import CategoryError from './components/CategoryError';
 import store from './stores';
 import './assets/css/fonts.css';
 

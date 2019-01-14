@@ -5,7 +5,7 @@
 }
 .Entry--title{
     font-family: 'Thasadith Bold';
-    color: #E8B4A2;
+    color: #e5b300;
     text-align: center;
     font-size: 35px;
 }
@@ -26,7 +26,7 @@
 .Entry--comment{
     font-family: 'Thasadith Bold';
     font-weight: bolder;
-    color: #87AACC;
+    color: #e5b300;
     padding: 30px;
     margin-bottom: 30px;
     cursor: pointer;

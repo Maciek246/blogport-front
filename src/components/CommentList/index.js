@@ -9,8 +9,7 @@ class CommentList extends Component{
         return (
                 <div className="CommentList--container">
                     <div className="CommentList--authorContainer">
-                        <div className="CommentList--authorAvatar">Avatar</div>
-                        <div className="CommentList--authorName">Nick</div>
+                        <div className="CommentList--authorName">Nickname</div>
                     </div>
                     <div className="CommentList--comment">Treść komentarza</div>
                 </div>

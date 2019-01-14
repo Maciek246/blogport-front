@@ -14,14 +14,14 @@
     align-content: center;
     align-items: center;
     align-self: center;
-    background-color: #779ECC;
+    background-color: #444;
     height: 100%;
     
 }
 .BlogLovWeb--footer{
-    background-color: #fff;
+    background-color: #444;
     color: #000;
-    border-top: 20px #779ECC solid;
+    border-top: 20px #444 solid;
     padding: 30px;
     text-align: center;
 }
