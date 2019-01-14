@@ -1,13 +1,16 @@
-import React, {Component} from 'react';
+import React, { Component } from 'react';
+import { connect } from 'react-redux';
 import './style.css';
 
 
 class UserPanel extends Component{
     render(){
+        const { username, email } = this.props;
         return(
             <div className="UserPanel--container">
                 <h1 className="UserPanel--title">Panel Użytkownika</h1>
-                <div>Twój nickname: </div>
+                <div>Twój nickname: {username}</div>
+                <div>Twój email: {email}</div>
                 <fieldset className="UserPanel--fieldset">
                     <legend className="UserPanel--legend"><h2 className="UserPanel--titlePass">Ustawienia bloga</h2></legend>
                         <div>Twój blog: </div>
@@ -29,4 +32,12 @@ class UserPanel extends Component{
         );
     }
 }
-export default UserPanel;
+
+const mapStateToProps = (state) => {
+    return {
+        username: state.user.username,
+        email: state.user.email
+    }
+}
+
+export default connect(mapStateToProps)(UserPanel);
