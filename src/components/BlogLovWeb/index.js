@@ -24,14 +24,17 @@ class BlogLovWeb extends Component{
                 <div className="BlogLovWeb--header">
                     <img src={header} alt="header" className="BlogLovWeb--header-img"/>
                 </div>
-                <div className="BlogLovWeb--content-container"></div>
-
+                <div className="BlogLovWeb--content-container">
                 {
                     (entries[0].entries.length > 0)?
                     entries[0].entries.map(entry => <Entry key={entry.title} entry={entry}/>):
                     mock_entries.map(entry => <Entry key={entry.title} entry={entry}/>)
 
                 }
+                
+                </div>
+
+
 
                 <div className="BlogLovWeb--footer">
                 <p>Aliquip commodo id id incididunt ad in eiusmod. Consectetur culpa esse proident adipisicing est 
@@ -39,7 +42,6 @@ class BlogLovWeb extends Component{
                     incididunt pariatur. Nisi et laboris Lorem velit adipisicing.</p>
                 </div>
                 
-                </div>
             </div>
         );
     }
