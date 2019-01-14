@@ -5,11 +5,13 @@
     align-items: center;
     align-content: center;
     flex-direction: column;
+    text-align: center;
     color: #fff;
     background-color: #1b1ece;
     margin: 30px;
     padding: 10px;
     height: 100%;
+    font-family: 'Open Sans';
 }
 .AddBlogPanel--title{
     font-family: 'Major Mono';
@@ -25,16 +27,14 @@
     border: none;
 }
 .AddBlogPanel--label-first{
-    font-size: 16px;
+    font-size: 18px;
     font-family: 'Thasadith Bold';
 }
-
 .AddBlogPanel--label-second{
     margin-top: 4%;
-    font-size: 16px;
+    font-size: 18px;
     font-family: 'Thasadith Bold';
 }
-
 .AddBlogPanel--select{
     margin-top:4%;
     border: #fff;
@@ -55,7 +55,6 @@
     border-radius: 20px;
     cursor: pointer;
 }
-
 .AddBlogPanel--submit{
     border: #fff;
     background-color: #fff;

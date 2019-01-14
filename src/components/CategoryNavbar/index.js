@@ -12,7 +12,7 @@ class CategoryNavbar extends Component{
             <div className="CategoryNavbarContainer">
                 <img src={navbar_img2} alt="navbar img" className="navbar--img2"/>
                 <span className="BlogportLogo--container">
-                    <Link to="/">BlOGPoRt</Link>
+                    <a>BlOGPoRt</a>
                 </span>
                 <span className="CategoryList">
                     <p onClick={() => {this.props.selectCategory('')}}>All</p>
