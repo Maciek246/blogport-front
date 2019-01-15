@@ -11,7 +11,7 @@ class BlogTile extends Component{
             <div className="BlogTile--container">
                 <h1 className="BlogTile--title"><Link to={slug} style={{ textDecoration: 'none', color: '#e5b300' }}>{blog.name}</Link></h1>
                 <div className="BlogTile--author">{blog.author}</div>
-                <div className="BlogTile--category">{blog.categor}</div>
+                <div className="BlogTile--category">{blog.category}</div>
                 <div className="BlogTile--description">{blog.description}</div>
             </div>
         );

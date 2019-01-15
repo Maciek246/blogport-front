@@ -5,6 +5,7 @@ import LoginForm from '../LoginForm';
 import RegisterForm from '../RegisterForm';
 import GuestButton from '../ButtonNavGuest'
 import LoggedButton from '../ButtonNavLogged';
+import { connect } from 'react-redux';
 import './style.css';
 import 'font-awesome/css/font-awesome.min.css';
 
@@ -24,7 +25,6 @@ class MainNavbar extends Component {
   }
 
   render() {
-    let isAuthenticated = true;
     return (
       <nav>
         <div className="main-navbar">
@@ -32,15 +32,14 @@ class MainNavbar extends Component {
             <Link to="/" className="BlogPort--title">BlOGPoRt</Link>
           </div>
           <div className="main-navbar main-navbar--content-right">
-            {isAuthenticated ?
-              <div className="main-navbar main-navbar--content-right">
+            <div className="main-navbar main-navbar--content-right">
+              {this.props.token && this.props.username ?
                 <LoggedButton/>
-              </div>
-              :
-              <div className="main-navbar main-navbar--content-right">
+                :
                 <GuestButton/>
-              </div>
-            }
+              }
+            </div>
+            
           </div>
         </div>
         <Modal show={this.state.modalLoginIsOpen} onClose={this.toggleModalLogin}>
@@ -54,4 +53,11 @@ class MainNavbar extends Component {
   }
 }
 
-export default MainNavbar;
+const mapStateToProps = (state) => {
+  return {
+    username: state.user.username,
+    token: state.user.token,
+  }
+}
+
+export default connect(mapStateToProps)(MainNavbar);

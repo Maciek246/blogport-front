@@ -1,5 +1,8 @@
 import React, { Component } from 'react';
 import './style.css';
+import { connect } from 'react-redux';
+import { register } from '../../actions/userActions';
+
 const initialState = {
     firstName: "",
     lastName: "",
@@ -62,54 +65,63 @@ class RegisterForm extends Component{
         }
         return true;
       };
+
       handleSubmit = event => {
         event.preventDefault();
         const isValid = this.validate();
         if (isValid) {
-          console.log(this.state);
+          this.props.register(
+              this.state.username,
+              this.state.password1,
+              this.state.password2,
+              this.state.email,
+              this.state.firstName,
+              this.state.lastName
+            )
           this.setState(initialState);
         }
       };
+
   render(){
         return (
       <form onSubmit={this.handleSubmit}>
           <div className="register--container">
             <div className="scroll">
-                <label for="firstName" className="regLabel">Imię: 
+                <label htmlFor="firstName" className="regLabel">Imię: 
                     <br/>
                     <input type="text" id="firstName" name="firstName" value={this.state.firstName} onChange={this.handleChange}/>
                     <br/>
                     <output className="error--info">{this.state.nameError}</output>                    
                 </label>
                     <br/>
-                <label for="lastName" className="regLabel">Nazwisko: 
+                <label htmlFor="lastName" className="regLabel">Nazwisko: 
                     <br/>
                     <input type="text" id="lastName" name="lastName" value={this.state.lastName} onChange={this.handleChange}/>
                     <br/>
                     <output className="error--info">{this.state.surnameError}</output>
                 </label>
                     <br/>
-                <label for="email" className="regLabel" value={this.state.email} onChange={this.handleChange}>Email: <br/>
+                <label htmlFor="email" className="regLabel" value={this.state.email} onChange={this.handleChange}>Email: <br/>
                 <input type="text" id="email" name="email"/>
                 <br/>
                 <output className="error--info">{this.state.emailError}</output>
                 </label>
                     <br/>
-                <label for="username" className="regLabel">Nazwa użytkownika:
+                <label htmlFor="username" className="regLabel">Nazwa użytkownika:
                     <br/>
-                    <input type="text" id="username" name="username"/>
+                    <input type="text" id="username" name="username" value={this.state.username} onChange={this.handleChange}/>
                     <br/>
                     <output className="error--info">{this.state.usernameError}</output>
                 </label>
                     <br/>
-                <label for="password1" className="regLabel">Hasło: 
+                <label htmlFor="password1" className="regLabel">Hasło: 
                     <br/>
                     <input type="password" id="regPass1" name="password1" value={this.state.password1} onChange={this.handleChange}/>
                     <br/>
                     <output className="error--info">{this.state.password1Error}</output>
                 </label>
                     <br/>
-                <label for="password2" className="regLabel">Powtórz hasło: 
+                <label htmlFor="password2" className="regLabel">Powtórz hasło: 
                     <br/>
                     <input type="password" id="regPass2" name="password2" value={this.state.password2} onChange={this.handleChange}/>
                     <br/>
@@ -127,4 +139,17 @@ class RegisterForm extends Component{
     );
   }
 }
-export default RegisterForm;
+
+const mapStateToProps = (state) => {
+    return {
+        errors: state.user.error
+    }
+}
+
+const mapDispatchToProps = (dispatch) => {
+    return {
+        register: (username, password, password2, email, first_name, last_name) => dispatch(register(username, password, password2, email, first_name, last_name))
+    }
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(RegisterForm);

@@ -18,7 +18,7 @@ class App extends Component {
       <Provider store={store}>
         <Router>
           <React.Fragment>
-            <MainNavbar />
+            <MainNavbar/>
             <Route exact path="/" component={MainPage} />
             <Route exact path="/user/:username" component={UserPanel} />
             <Route exact path="/addblog" component={AddBlog} />

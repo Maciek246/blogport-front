@@ -1,9 +1,23 @@
-import { FETCHING_BLOGS, FETCHING_BLOGS_SUCCESS, FETCHING_BLOGS_FAILS } from '../actions/blogActions';
+import { 
+    FETCHING_BLOGS,
+    FETCHING_BLOGS_SUCCESS,
+    FETCHING_BLOGS_FAIL,
+    CREATE_BLOG,
+    CREATE_BLOG_SUCCESS,
+    CREATE_BLOG_FAIL,
+    FETCHING_BLOG_BY_SLUG,
+    FETCHING_BLOG_BY_SLUG_SUCCESS,
+    FETCHING_BLOG_BY_SLUG_FAIL,
+    ADD_POST,
+    ADD_POST_SUCCESS,
+    ADD_POST_FAIL,
+} from '../actions/blogActions';
 
 const initialState = {
     blogs: [],
+    entries: [],
     fetching: false,
-    errors: []
+    error: null
 }
 
 export const reducer = (state=initialState, action) => {
@@ -19,11 +33,64 @@ export const reducer = (state=initialState, action) => {
                 blogs: action.payload.data,
                 fetching: false
             };
-        case FETCHING_BLOGS_FAILS:
+        case FETCHING_BLOGS_FAIL:
             return {
                 ...state,
                 fetching: false,
-                errors: action.payload
+                error: action.payload
+            };
+        case CREATE_BLOG:
+            return {
+                ...state,
+                fetching: true
+            };
+        case CREATE_BLOG_SUCCESS:
+            return {
+                ...state,
+                blogs: [...state.blogs, action.payload],
+                fetching: false
+            };
+        case CREATE_BLOG_FAIL:
+            return {
+                ...state,
+                fetching: false,
+                error: action.payload
+            };
+        case FETCHING_BLOG_BY_SLUG:
+            return {
+                ...state,
+                fetching: true
+            };
+        case FETCHING_BLOG_BY_SLUG_SUCCESS:
+            return {
+                ...state,
+                blogs: [...state, action.payload.data],
+                fetching: false,
+                error: null
+            };
+        case FETCHING_BLOG_BY_SLUG_FAIL:
+            return {
+                ...state,
+                fetching: false,
+                error: action.payload
+            };
+        case ADD_POST:
+            return {
+                ...state,
+                fetching: true
+            };
+        case ADD_POST_SUCCESS:
+            return {
+                ...state,
+                blogs: [...state.blogs, action.payload.data],
+                fetching: false,
+                error: null
+            };
+        case ADD_POST_FAIL:
+            return {
+                ...state,
+                fetching: false,
+                error: action.payload
             };
         default:
             return state;
