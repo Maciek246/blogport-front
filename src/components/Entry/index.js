@@ -15,7 +15,7 @@ class Entry extends Component{
         })
     }
     render(){
-        const { title, content, createdAt, updatedAt } = this.props.entry;
+        const { title, content, createdAt, updatedAt, comments, slug } = this.props.entry;
         return(
             <div className="Entry--content">
                 <h1 className="Entry--title">{title}</h1>
@@ -24,7 +24,7 @@ class Entry extends Component{
                 </p>
                 <p className="Entry--dates">Dodano: {createdAt} Edytowano: {updatedAt}</p>
                 <a className="Entry--comment" onClick={this.toggleHidden.bind(this)} >Skomentuj</a>
-                {!this.state.isHidden && <CommentContainer/>}
+                {!this.state.isHidden && <CommentContainer blog_slug={this.props.blog_slug} entry_slug={slug} comments={comments}/>}
             </div>
         );
     }

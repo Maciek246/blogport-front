@@ -16,6 +16,10 @@ export const ADD_POST = 'ADD_POST';
 export const ADD_POST_SUCCESS = 'ADD_POST_SUCCESS';
 export const ADD_POST_FAIL = 'ADD_POST_FAILS';
 
+export const ADD_COMMENT = 'ADD_COMMENT';
+export const ADD_COMMENT_SUCCESS = 'ADD_COMMENT_SUCCESS';
+export const ADD_COMMENT_FAIL = 'ADD_COMMENT_FAILS';
+
 
 export function fetch_blogs(){
     return dispatch => {
@@ -107,16 +111,13 @@ export function create_blog(token, blogname, category){
 export function addpost(token, blog_slug, post_data){
     return dispatch => {
         dispatch({type: ADD_POST})
-        fetch(`${API_URL}/${blog_slug}`, {
+        fetch(`${API_URL}/blog/${blog_slug}`, {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',
                 'Authorization': `JWT ${token}`
             },
-            body: JSON.stringify({
-                title: post_data.title,
-                content: post_data.content
-            })
+            body: JSON.stringify({title: post_data.title, content: post_data.content})
         }).then(res => {
             if(res.ok){
                 return res.json()
@@ -127,6 +128,30 @@ export function addpost(token, blog_slug, post_data){
         })
         .catch(err => {
             dispatch({type: ADD_POST_FAIL, payload: err})
+        })
+    }
+}
+
+export function add_comment_to_entry(blog, entry, token, comment){
+    return dispatch => {
+        dispatch({type: ADD_COMMENT})
+        fetch(`${API_URL}/blog/${blog}/${entry}/comments`, {
+            method: 'POST',
+            body: JSON.stringify({content: comment}),
+            headers: {
+                'Content-Type': 'application/json',
+                'Authorization': `JWT ${token}`
+            }
+        }).then(res => {
+            if(res.ok){
+                return res.json()
+            }
+            else return res.json().then(err => {throw new Error(err.message)});
+        }).then(json => {
+            dispatch({type: ADD_COMMENT_SUCCESS, payload: json})
+        })
+        .catch(err => {
+            dispatch({type: ADD_COMMENT_FAIL, payload: err})
         })
     }
 }

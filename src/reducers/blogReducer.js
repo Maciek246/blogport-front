@@ -11,6 +11,9 @@ import {
     ADD_POST,
     ADD_POST_SUCCESS,
     ADD_POST_FAIL,
+    ADD_COMMENT,
+    ADD_COMMENT_SUCCESS,
+    ADD_COMMENT_FAIL
 } from '../actions/blogActions';
 
 const initialState = {
@@ -64,7 +67,7 @@ export const reducer = (state=initialState, action) => {
         case FETCHING_BLOG_BY_SLUG_SUCCESS:
             return {
                 ...state,
-                blogs: [...state, action.payload.data],
+                blogs: [...state.blogs, action.payload.data],
                 fetching: false,
                 error: null
             };
@@ -87,6 +90,22 @@ export const reducer = (state=initialState, action) => {
                 error: null
             };
         case ADD_POST_FAIL:
+            return {
+                ...state,
+                fetching: false,
+                error: action.payload
+            };
+        case ADD_COMMENT:
+            return {
+                ...state,
+                fetching: true
+            };
+        case ADD_COMMENT_SUCCESS:
+            return {
+                ...state,
+                error: null
+            };
+        case ADD_COMMENT_FAIL:
             return {
                 ...state,
                 fetching: false,

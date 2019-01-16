@@ -6,6 +6,7 @@ import './style.css';
 class UserPanel extends Component{
     render(){
         const { username, email } = this.props;
+        const blog = this.props.blogs.filter(blog => blog.author === username)
         return(
             <div className="UserPanel--container">
                 <h1 className="UserPanel--title">Panel Użytkownika</h1>
@@ -13,8 +14,7 @@ class UserPanel extends Component{
                 <div>Twój email: {email}</div>
                 <fieldset className="UserPanel--fieldset">
                     <legend className="UserPanel--legend"><h2 className="UserPanel--titlePass">Ustawienia bloga</h2></legend>
-                        <div>Twój blog: </div>
-                        <div className="UserPanel--deleteButton">Usuń blog</div>
+                        <div>Twój blog: {blog[0].name}</div>
                 </fieldset>
                 <fieldset className="UserPanel--fieldset">
                     <legend className="UserPanel--legend"><h2 className="UserPanel--titlePass">Zmiana hasła</h2></legend>
@@ -36,7 +36,8 @@ class UserPanel extends Component{
 const mapStateToProps = (state) => {
     return {
         username: state.user.username,
-        email: state.user.email
+        email: state.user.email,
+        blogs: state.blog.blogs
     }
 }
 
