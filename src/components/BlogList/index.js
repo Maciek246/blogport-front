@@ -16,14 +16,14 @@ class BlogList extends Component{
         const { blogs, category } = this.props;
         return (
             <div className="bloglist">
-               
+
                 {
-                    blogs.length > 0 ? 
-                    filter_blogs_by_category(blogs, category).map(element => <BlogTile key={element.name} blog={element}/>):
-                    <CategoryError/> // filter_blogs_by_category(mock_blogs, category).map(element => <BlogTile key={element.name} blog={element}/>)
-                }
-                  
-                
+                    blogs.length > 0 
+                    ? 
+                    filter_blogs_by_category(blogs, category).map(element => <BlogTile key={element.name} blog={element}/>)
+                    :
+                    <CategoryError/>
+                }             
             </div>
         );
     }

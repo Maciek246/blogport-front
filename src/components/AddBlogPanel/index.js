@@ -62,7 +62,6 @@ class AddBlogPanel extends Component {
                         <label className="AddBlogPanel--label-first">Wybierz kategorię bloga:
                         <br/>
                             <select className="AddBlogPanel--select" name="category" value={this.state.fields.category} onChange={this.handleChange}>
-                                <option value="">All</option>
                                 <option value="Design">Design</option>
                                 <option value="Technology">Technology</option>
                                 <option value="Sport">Sport</option>
