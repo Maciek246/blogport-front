@@ -17,20 +17,17 @@ class BlogLovWeb extends Component{
 
     render(){
         const blog = this.props.blogs.filter(blog => blog.slug === this.props.match.params.slug);
-        console.log(blog, this.props.user);
         return(
             <div className="BlogLovWeb--container">
                 <div className="BlogLovWeb--header">
                     <img src={header} alt="header" className="BlogLovWeb--header-img"/>
                 </div>
                 <p style={{color: 'black', textAlign: 'center'}}>Ten blog wyświetlono: {parseInt(blog[0].views) + 1} razy</p>
-                <AddPostPanel blog_url={this.props.match.params.slug}/> 
                 <div className="BlogLovWeb--content-container">
                 {
                     (blog[0].entries.length > 0)?
                     blog[0].entries.map(entry => <Entry key={entry.slug} entry={entry} blog_slug={this.props.match.params.slug}/>):
-                    mock_entries.map(entry => <Entry key={entry.title} entry={entry}/>)
-
+                    null
                 }
                 </div>
                 <div className="BlogLovWeb--footer">

@@ -1,4 +1,6 @@
 import React, { Component } from 'react';
+import { connect } from 'react-redux';
+import { create_blog } from '../../actions/blogActions';
 import './style.css';
 
 class AddBlogPanel extends Component {
@@ -22,37 +24,25 @@ class AddBlogPanel extends Component {
         e.preventDefault();
         if (this.validateForm()) {
             let fields = {};
-            fields["title"] = "";
+            fields["name"] = "";
             fields["category"] = "";
-            fields["logoFile"] = "";
             this.setState({ fields: fields });
-            alert("Form submitted");
+            this.props.create(this.props.token, this.state.fields.name, this.state.fields.category)
         }
     }
-    handleselectedFile = (event) => {
-        this.setState({
-            selectedFile: event.target.files[0],
-            loaded: 0,
-        })
-    }
+    
     validateForm() {
         let fields = this.state.fields;
         let errors = {};
         let formIsValid = true;
-        if (!fields["title"]) {
+        if (!fields["name"]) {
             formIsValid = false;
-            errors["title"] = "To pole jest wymagane. Proszę podać tytuł bloga!";
+            errors["name"] = "To pole jest wymagane. Proszę podać tytuł bloga!";
         }
         if (!fields["category"]) {
             formIsValid = false;
             errors["category"] = "To pole jest wymagane. Proszę wybrać kategorię bloga!";
         }
-
-        if (!fields["logoFile"]) {
-            formIsValid = false;
-            errors["logoFile"] = "Nie dodano pliku. Proszę dodać plik z logiem bloga!";
-        }
-
         this.setState({
             errors: errors
         });
@@ -65,7 +55,7 @@ class AddBlogPanel extends Component {
                 <div className="AddBlogPanel--container">
                     <h1 className="AddBlogPanel--title">DoDAj nOWego BlOgA</h1>
                     <br />
-                    <input type="text" name="title" className="AddBlogPanel--input" value={this.state.fields.title} onChange={this.handleChange} placeholder="Podaj nazwę Bloga" />
+                    <input type="text" name="name" className="AddBlogPanel--input" value={this.state.fields.title} onChange={this.handleChange} placeholder="Podaj nazwę Bloga" />
                     <br />
                     <div className="errorMessage">{this.state.errors.title}</div>
                     <div>
@@ -83,11 +73,6 @@ class AddBlogPanel extends Component {
                         <br />
                         <div className="errorMessage">{this.state.errors.category}</div>
                         <br /><br />
-                        <label className="AddBlogPanel--label-second">Dodaj logo w postaci pliku:
-                        <br/>
-                            <input className="AddBlogPanel--file" type="file" name="logoFile" value={this.state.fields.logoFile} onChange={this.handleChange} />
-                        </label>
-                        <div className="errorMessage">{this.state.errors.logoFile}</div>
                     </div>
                         <br />
                     <input type="submit" className="AddBlogPanel--submit" />
@@ -98,4 +83,16 @@ class AddBlogPanel extends Component {
     }
 }
 
-export default AddBlogPanel;
+const mapStateToProps = (state) => {
+    return {
+        token: state.user.token
+    }
+}
+
+const mapDispatchToProps = (dispatch) => {
+    return {
+        create: (token, name, category) => dispatch(create_blog(token, name, category))
+    }
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(AddBlogPanel);

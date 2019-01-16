@@ -31,7 +31,7 @@ class AddPostPanel extends Component {
             fields["title"] = "";
             fields["content"] = "";
             this.setState({ fields: fields });
-            this.props.addpost(this.props.token, this.props.blog_url, this.state.fields);
+            this.props.addpost(this.props.token, this.props.match.params.slug, this.state.fields);
         }
 
     }
