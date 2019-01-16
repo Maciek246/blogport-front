@@ -7,7 +7,7 @@ import 'font-awesome/css/font-awesome.min.css';
 
 class ButtonNavLogged extends Component {
   render() {
-    const user_url = `/user/${this.props.username}`
+    const user_url = `/user/${this.props.username}`;
     return (
       <nav>
         <div className="main-navbar">
@@ -26,7 +26,8 @@ class ButtonNavLogged extends Component {
 
 const mapStateToProps = (state) => {
   return {
-    username: state.user.username
+    username: state.user.username,
+    blogs: state.blog.blogs
   }
 }
 

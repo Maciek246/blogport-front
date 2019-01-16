@@ -1,4 +1,6 @@
 import React, { Component } from 'react';
+import { connect } from 'react-redux';
+import { addpost } from '../../actions/blogActions';
 import './style.css';
 
 class AddPostPanel extends Component {
@@ -27,9 +29,9 @@ class AddPostPanel extends Component {
         if (this.validateForm()) {
             let fields = {};
             fields["title"] = "";
-            fields["textPost"] = "";
+            fields["content"] = "";
             this.setState({ fields: fields });
-            alert("Form submitted");
+            this.props.addpost(this.props.token, this.props.blog_url, this.state.fields);
         }
 
     }
@@ -44,9 +46,9 @@ class AddPostPanel extends Component {
             formIsValid = false;
             errors["title"] = "To pole jest wymagane. Proszę podać tytuł bloga!";
         }
-        if (!fields["textPost"]) {
+        if (!fields["content"]) {
             formIsValid = false;
-            errors["textPost"] = "To pole jest wymagane. Proszę wpisać treść posta!";
+            errors["content"] = "To pole jest wymagane. Proszę wpisać treść posta!";
         }
 
         this.setState({
@@ -65,7 +67,7 @@ class AddPostPanel extends Component {
                     <br />
                     <div className="errorMessage">{this.state.errors.title}</div>
                     <br />
-                    <textarea className="AddPostPanel--textPost" name="textPost" value={this.state.fields.textPost} onChange={this.handleChange} placeholder="Tutaj proszę wpisać treść posta" ></textarea>
+                    <textarea className="AddPostPanel--textPost" name="content" value={this.state.fields.textPost} onChange={this.handleChange} placeholder="Tutaj proszę wpisać treść posta" ></textarea>
                     <br />
                     <div className="errorMessage">{this.state.errors.textPost}</div>
                     <br />
@@ -77,4 +79,16 @@ class AddPostPanel extends Component {
     }
 }
 
-export default AddPostPanel;
+const mapStateToProps = (state) => {
+    return {
+        token: state.user.token
+    }
+}
+
+const mapDispatchToProps = (dispatch) => {
+    return {
+        addpost: (token, slug, data) => dispatch(addpost(token, slug, data))
+    }
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(AddPostPanel);

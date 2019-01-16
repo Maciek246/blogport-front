@@ -31,13 +31,4 @@ const mapDispatchToProps = {
         selectCategory: setCategory
 }
 
-/*
-                    <Link className="link" to="/design">Design</Link>
-                    <Link className="link" to="/technology">Technology</Link>
-                    <Link className="link" to="/sport">Sport</Link>
-                    <Link className="link" to="/travel">Travel</Link>
-                    <Link className="link" to="/lifestyle">Lifestyle</Link>
-
-*/
-
 export default connect(null, mapDispatchToProps)(CategoryNavbar);
